@@ -14,3 +14,4 @@ This is a repository that I created during a course that teaches how to contribu
     • Flake8
     • Travis CI
     • Pyup
+    • Pytest
