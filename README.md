@@ -15,3 +15,4 @@ This is a repository that I created during a course that teaches how to contribu
     • Travis CI
     • Pyup
     • Pytest
+    • Codecov
