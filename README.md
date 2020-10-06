@@ -6,6 +6,7 @@ This is a repository that I created during a course that teaches how to contribu
 [![Build Status](https://travis-ci.org/luxmafra/pytools.svg?branch=master)](https://travis-ci.org/luxmafra/pytools)
 [![Updates](https://pyup.io/repos/github/luxmafra/pytools/shield.svg)](https://pyup.io/repos/github/luxmafra/pytools/)
 [![Python 3](https://pyup.io/repos/github/luxmafra/pytools/python-3-shield.svg)](https://pyup.io/repos/github/luxmafra/pytools/)
+[![codecov](https://codecov.io/gh/luxmafra/pytools/branch/master/graph/badge.svg?token=ANmMip0jIo)](undefined)
 
     • Git
     • Pyenv
