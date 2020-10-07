@@ -3,13 +3,15 @@ import pytest
 from pytools.spam.db import Connect
 from pytools.spam.models import User
 
-@pytest.fixture
+
+@pytest.fixture(scope='session')
 def connect():
     # Setup
     connect_obj = Connect()
     yield connect_obj
     # Tear Down
     connect_obj.close()
+
 
 @pytest.fixture
 def session(connect):
@@ -25,12 +27,8 @@ def test_save_user(session):
     assert isinstance(user.id, int)
 
 
-
 def test_list_users(session):
     users = [User(name='Lucas'), User(name='Renzo')]
     for user in users:
         session.save(user)
     assert users == session.lst()
-
-
-
