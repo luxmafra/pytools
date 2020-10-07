@@ -23,7 +23,7 @@ class Session:
 class Connect:
 
     def __init__(self):
-        sleep(10)
+        sleep(1)
 
     def generate_session(self):
         return Session()
