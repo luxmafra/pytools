@@ -1,6 +1,7 @@
 import pytest
 
 from pytools.spam.db import Connect
+# Creating the conftest file we can use the fixtures for all modules of test_spam
 
 
 @pytest.fixture(scope='session')
