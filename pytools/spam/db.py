@@ -11,7 +11,7 @@ class Session:
         return self.users
 
     def roll_back(self):
-        pass
+        self.users.clear()
 
     def close(self):
         pass
