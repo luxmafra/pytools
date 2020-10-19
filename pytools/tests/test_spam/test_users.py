@@ -9,8 +9,7 @@ def test_save_user(session):
 
 def test_list_users(session):
     users = [User(name='Lucas', email='luxmafra@gmail.com'),
-             User(name='Renzo', email='luxchagas@live.com')
-            ]
+             User(name='Renzo', email='luxchagas@live.com')]
     for user in users:
         session.save(user)
     assert users == session.lst()
