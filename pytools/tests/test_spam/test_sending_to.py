@@ -1,3 +1,5 @@
+from unittest.mock import Mock
+
 import pytest
 
 from pytools.spam.email_sender import Sender
@@ -20,39 +22,30 @@ from pytools.spam.models import User
 def test_sending_spam(session, users):
     for user in users:
         session.save(user)
-    sender = SenderMock()
+    sender = Mock()
     sending_spam = SendingSpam(session, sender)
     sending_spam.send_email(
         'luxmafra@gmail.com',
         'Pytools Course',
         'Testing sending emails...'
     )
-    assert len(users) == sender.qtd_email_sent
+    assert len(users) == sender.send.call_count
 
 
-class SenderMock(Sender):
 
-    def __init__(self):
-        super().__init__()
-        self.qtd_email_sent = 0
-        self.param_sending = None
-
-    def send(self, email_from, email_to, subject, message):
-        self.param_sending = (email_from, email_to, subject, message)
-        self.qtd_email_sent += 1
 
 
 def test_param_spam(session):
     user = User(name='Lucas', email='luxmafra@gmail.com')
     session.save(user)
-    sender = SenderMock()
+    sender = Mock()
     sending_spam = SendingSpam(session, sender)
     sending_spam.send_email(
         'luxchagas@live.com',
         'Pytools Course',
         'Testing sending emails...'
     )
-    assert sender.param_sending == (
+    sender.send.assert_called_once_with(
         'luxchagas@live.com',
         'luxmafra@gmail.com',
         'Pytools Course',
