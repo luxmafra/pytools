@@ -2,7 +2,6 @@ from unittest.mock import Mock
 
 import pytest
 
-from pytools.spam.email_sender import Sender
 from pytools.spam.main import SendingSpam
 from pytools.spam.models import User
 
@@ -30,9 +29,6 @@ def test_sending_spam(session, users):
         'Testing sending emails...'
     )
     assert len(users) == sender.send.call_count
-
-
-
 
 
 def test_param_spam(session):
