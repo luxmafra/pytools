@@ -17,3 +17,4 @@ This is a repository that I created during a course that teaches how to contribu
     • Pyup
     • Pytest
     • Codecov
+    • Pytest-Mock
