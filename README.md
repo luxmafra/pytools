@@ -18,3 +18,4 @@ This is a repository that I created during a course that teaches how to contribu
     • Pytest
     • Codecov
     • Pytest-Mock
+    • Pipenv
